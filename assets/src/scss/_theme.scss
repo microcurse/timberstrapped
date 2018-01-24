@@ -1,1 +1,11 @@
 // This is any general theme stylings will go
+
+header{
+    background-color:$primary;
+    a{
+        color:$white;
+    }
+    ul li{
+        list-style:none;
+    }
+}

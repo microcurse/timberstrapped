@@ -1,11 +1,24 @@
 // This is where all of the site's variables such as Color, Margins, Padding, etc..
 
-// Colors
-$primary_color:   #1B998B;
-$secondary_color: #FF6666;
-$gunmetal:        #2A2D34;
-$alert_color:     #5D2E8C;
-$highlight_color: #CCFF66;
+// Import PT Sans Narrow
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+// Brand Colors
+$primary:   #1B998B;
+$secondary: #FF6666;
+$dark:      #2A2D34;
+$alert:     #5D2E8C;
+$highlight: #CCFF66;
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "alert":      $alert,
+  "dark":       $dark,
+  "highlight":  $highlight,
+), $theme-colors);
+
 
 //
 // Color system
@@ -103,7 +116,7 @@ $body-color:                $gray-900;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                $primary;
 $link-decoration:           none;
 $link-hover-color:          darken($link-color, 15%);
 $link-hover-decoration:     underline;

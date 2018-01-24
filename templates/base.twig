@@ -9,11 +9,11 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
+				<div class="container d-flex flex-row">
+					<h1 class="hdr-logo p2" role="banner">
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
+					<nav id="nav-main" class="nav-main p2" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</nav><!-- #nav -->
 				</div>
