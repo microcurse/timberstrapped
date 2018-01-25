@@ -8,7 +8,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					{% for child in item.children %}
-						<a class="nav-drop-item {% if child.current %}active{%endif%}" href="{{ child.link }}">{{ child.title }}</a>
+						<a class="dropdown-item {% if child.current %}active{%endif%}" href="{{ child.link }}">{{ child.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
