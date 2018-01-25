@@ -11,16 +11,16 @@
 			{% block header %}
 				<div class="container">
 					<div class="row">
-						<div class="col-sm">
-							<h1 class="hdr-logo" role="banner">
-								<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-							</h1>
-						</div>
-						<div class="col-sm">
-							<nav id="nav-main" class="nav-main" role="navigation">
+						<nav class="navbar navbar-expand-md" role="navigation">
+							<h1><a class="navbar-brand" href="{{site.url}}" rel="home">{{site.name}}</a></h1>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 								{% include "menu.twig" with {'menu': menu.get_items} %}
-							</nav><!-- #nav -->
-						</div>
+							</div>
+						</nav>
 					</div><!-- end row -->
 				</div><!-- end container -->
 			{% endblock %}
