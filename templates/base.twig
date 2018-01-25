@@ -9,20 +9,18 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
-				<div class="container">
-					<div class="row">
-						<nav class="navbar navbar-expand-md" role="navigation">
-							<h1><a class="navbar-brand" href="{{site.url}}" rel="home">{{site.name}}</a></h1>
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
+				<nav class="navbar navbar-expand-md" role="navigation">
+					<div class="container">
+						<a class="navbar-brand" href="{{site.url}}" rel="home">{{site.name}}</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-							<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-								{% include "menu.twig" with {'menu': menu.get_items} %}
-							</div>
-						</nav>
-					</div><!-- end row -->
-				</div><!-- end container -->
+						<div id="navbar" class="collapse navbar-collapse">
+							{% include "menu.twig" with {'menu': menu.get_items} %}
+						</div>
+					</div><!-- end container -->
+				</nav>
 			{% endblock %}
 		</header>
 

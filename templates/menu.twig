@@ -1,18 +1,22 @@
 {% if menu %}
 	<ul class="navbar-nav">
-	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }} nav-item">
-			<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-		</li>
-	{% if item.children %}
-        <li class="nav-item dropdown">
-			<div class="dropdown-menu" aira-labelledby="navbarDropdownMenuLink">
-				{% for child in item.children %}
-					<a class="nav-drop-item" href="{{ child.link }}">{{ child.title }}</a>
-				{% endfor %}
-			</div>
-		</li>
-    {% endif %}
-	{% endfor %}
+		{% for item in menu %} 
+			{% if item.children %}
+			<li class="nav-item dropdown {% if item.current or item.current_item_ancestor or item.current_item_parent %}active{%endif%}">
+				<a class="nav-link dropdown-toggle" href="{{item.get_link}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ item.title }}
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					{% for child in item.children %}
+						<a class="nav-drop-item {% if child.current %}active{%endif%}" href="{{ child.link }}">{{ child.title }}</a>
+					{% endfor %}
+				</div>
+			</li>
+			{% else %}
+			<li class="nav-item {% if item.current or item.current_item_ancestor or item.current_item_parent %}active{%endif%}">
+				<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			</li>
+			{% endif %} 
+		{% endfor %}
 	</ul>
 {% endif %}
