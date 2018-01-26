@@ -1,9 +1,9 @@
 {
-  "name": "jeykeu-branch",
-  "description": "A WordPress starter theme based on Timber library and Bootstrap.",
+  "name": "microcurse-timberstrapped",
+  "description": " Timber powered WordPress starter theme with Bootstrap, Sass, and gulp ",
   "version": "1.0.0",
-  "homepage": "http://branch.junaidqadir.com",
-  "author": "Junaid Qadir Shekhanzai <shekhanzai.baloch@gmail.com>",
+  "homepage": "",
+  "author": "Marc Maninang <marc.maninang@gmail.com>",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -22,6 +22,7 @@
     "gulp-uglify": "^2.0.1"
   },
   "dependencies": {
+    "jQuery": "^1.7.4",
     "jquery": "^3.3.1"
   }
 }
